@@ -10,6 +10,13 @@ import './auth-overrides.css'
 import './hero-motion-boost.css'
 import './actor-lighting.css'
 import './actor-spotlight-targets.css'
+import './discipline-picker.css'
+import './discipline-enhance.css'
+import './intro-collage.css'
+import './casting-composer.css'
+import './community-interactions.css'
+import './community-hub.css'
+import './profile-media.css'
 
 const opportunities = [
   { company: 'Riverstone Theatre Co.', type: 'Casting call', title: 'Lead Actor — The Glass Menagerie', meta: 'Bengaluru · In-person', color: 'rose' },

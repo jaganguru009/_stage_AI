@@ -1,15 +1,41 @@
 export const navigation = [
-  ['dashboard', 'Overview', 'OV'],
-  ['feed', 'Community', 'CM'],
-  ['search', 'Discover talent', 'DS'],
-  ['castings', 'Casting calls', 'CC'],
-  ['applications', 'Applications', 'AP'],
-  ['messages', 'Messages', 'MS'],
-  ['notifications', 'Notifications', 'NT'],
-  ['settings', 'Settings', 'ST'],
+  ['dashboard', 'Overview', 'dashboard'],
+  ['feed', 'Community', 'feed'],
+  ['castings', 'Casting calls', 'castings'],
+  ['applications', 'Applications', 'applications'],
+  ['messages', 'Messages', 'messages'],
+  ['notifications', 'Notifications', 'notifications'],
+  ['settings', 'Settings', 'settings'],
+]
+
+export const organizationNavigation = [
+  ['organization', 'Overview', 'dashboard'],
+  ['search', 'Discover talent', 'search'],
+  ['castings', 'Manage castings', 'castings'],
+  ['messages', 'Messages', 'messages'],
+  ['notifications', 'Notifications', 'notifications'],
+  ['settings', 'Settings', 'settings'],
 ]
 
 export const artist = { name: 'Maya D Souza', initials: 'MD', role: 'Actor and movement artist', location: 'Pune, India', completedCredits: 18, followers: '1.2k', following: 186, availability: 'Available from September' }
+
+export const demoUsers = [
+  { role: 'artist', name: 'Maya D Souza', email: 'maya@stage.demo', password: 'Stage@2026', account: 'Artist', initials: 'MD', avatarTone: 'sunset' },
+  { role: 'casting', name: 'Kabir Mehta', email: 'kabir@stage.demo', password: 'Stage@2026', account: 'Casting director', initials: 'KM', avatarTone: 'ink' },
+  { role: 'organization', name: 'Rangmanch Pune', email: 'rangmanch@stage.demo', password: 'Stage@2026', account: 'Theatre group', initials: 'RP', avatarTone: 'plum' },
+  { role: 'agency', name: 'Aakar Talent House', email: 'aakar@stage.demo', password: 'Stage@2026', account: 'Talent agency', initials: 'AT', avatarTone: 'ochre' },
+]
+
+export const initialArtistProfile = {
+  ...artist,
+  bio: 'I make work that begins in the body. Currently collaborating across Marathi, Hindi, and English theatre.',
+  photo: '',
+  portfolio: [
+    { id: 'room', title: 'A Room of Her Own', year: '2025', company: 'Independent production', role: 'Performer / devised ensemble', description: 'A quiet, physical study of memory, rooms, and the selves we leave behind.', type: 'image', src: '' },
+    { id: 'monsoon', title: 'The Last Monsoon', year: '2024', company: 'Rangmanch Pune', role: 'Lead performer', description: 'An original Marathi work about a city listening for the rain.', type: 'image', src: '' },
+    { id: 'transit', title: 'Bodies in Transit', year: '2024', company: 'Independent production', role: 'Movement collaborator', description: 'An ensemble piece shaped through gesture, rhythm, and public space.', type: 'image', src: '' },
+  ],
+}
 
 export const artistDisciplines = [
   { group: 'Performance', items: ['Actor', 'Singer / vocalist', 'Musician / instrumentalist', 'Dancer / movement artist', 'Voice artist', 'Puppeteer'] },
@@ -41,6 +67,13 @@ export const dashboard = {
 export const feedPosts = [
   { id: 1, author: 'Rhea Deshpande', initials: 'RD', role: 'Singer and actor', time: '2h', text: 'Finding my voice again in the rehearsal room. Small fragments from a new Marathi musical.', tags: ['rehearsal', 'marathi-theatre'], likes: 84, comments: 12, color: 'teal' },
   { id: 2, author: 'Rangmanch Pune', initials: 'RP', role: 'Theatre group', time: '5h', text: 'We are opening auditions for The Last Monsoon. We are looking for performers with a strong movement practice.', tags: ['casting-call', 'pune'], likes: 126, comments: 25, color: 'violet' },
+]
+
+export const communitySeeds = [
+  { id: 'pune-makers', name: 'Pune Theatre Makers', description: 'The open room for actors, directors, designers, and backstage artists building Pune theatre.', members: '2,480', tone: 'maroon', joined: true },
+  { id: 'marathi-new-work', name: 'Marathi New Work Circle', description: 'Readings, scripts, music, and early conversations around original Marathi theatre.', members: '684', tone: 'saffron', joined: false },
+  { id: 'stagecraft-pune', name: 'Stagecraft Pune', description: 'A working circle for lights, sound, set, costume, production, and technical craft.', members: '421', tone: 'teal', joined: false },
+  { id: 'theatre-musicians', name: 'Theatre Musicians Collective', description: 'For composers, singers, instrumentalists, and sound artists making work for the stage.', members: '318', tone: 'plum', joined: true },
 ]
 
 export const conversations = [

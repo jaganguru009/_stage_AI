@@ -1,0 +1,26 @@
+# Copy this file to .env and fill in your own values before running the server.
+
+# Server
+PORT=4000
+# The URL your React app runs on — must match exactly (protocol + host + port)
+# so cookies and CORS work. CRA's dev server default is http://localhost:3000.
+FRONTEND_URL=http://localhost:3000
+
+# MongoDB
+# A local MongoDB server (e.g. `mongod` running on your machine). The database
+# name (stageai) is appended here — Mongo creates it automatically on first write.
+# MONGO_URI=mongodb://localhost:27017/stageai
+MONGO_URI=mongodb+srv://sa:Vh7Ns9.856ct3YV@stage.wqp8btw.mongodb.net/stageai
+
+# Auth
+# Any long random string. Used to sign login sessions (JWTs stored in an
+# httpOnly cookie). Changing it logs everyone out.
+JWT_SECRET=347826e404d3fa3a9091e0c69eee72d9fc357932faac8384f4750316ea4946564a57ce964a21cd9856ebd49762d380bd
+
+# Cloudinary (image storage for profile photos and portfolio uploads)
+# Get these from your Cloudinary dashboard: https://cloudinary.com/console
+# Until these are filled in, image uploads will return a clear error instead
+# of crashing the server.
+CLOUDINARY_CLOUD_NAME=drcaombfd
+CLOUDINARY_API_KEY=169614322111637
+CLOUDINARY_API_SECRET=QOIqL-6owr21c6qH2scTNqvlGMs

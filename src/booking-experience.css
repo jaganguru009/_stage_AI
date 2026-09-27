@@ -1,0 +1,136 @@
+/* Bookings, artist detail, streak/prompt, and demo login — added for the
+   fully client-side prototype. Reuses the existing editorial theatre
+   design tokens defined on .workspace and .auth-page-v2. */
+
+.streak-bar{display:flex;align-items:center;gap:24px;padding:20px 26px;background:linear-gradient(135deg,#4b1720,#8a3a3a);color:#fff3e6;border-radius:14px;margin-bottom:32px;box-shadow:0 14px 30px #3b25141f;flex-wrap:wrap}
+.streak-count{display:flex;align-items:center;gap:12px}
+.streak-flame{width:42px;height:42px;border-radius:50%;background:#ffffff20;display:grid;place-items:center;color:#f6c84e;flex:none}
+.streak-count strong{font:600 27px 'Playfair Display',serif;display:block;line-height:1}
+.streak-count>div>span{font-size:10px;color:#ead6c5;text-transform:uppercase;letter-spacing:.5px}
+.streak-prompt{flex:1;min-width:220px;border-left:1px solid #ffffff30;padding-left:24px}
+.streak-prompt p{font:500 9px 'DM Mono',monospace;letter-spacing:1.3px;color:#f3c969;margin:0 0 4px}
+.streak-prompt span{font-size:13px;line-height:1.4;color:#fdf1e4}
+
+.booking-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.booking-tabs button{padding:9px 16px;border-radius:999px;border:1px solid #dfd1c2;background:#fffaf1;color:#6b5850;font-size:12px;font-weight:600}
+.booking-tabs button.active{background:var(--wine,#311016);color:#fff7ec;border-color:var(--wine,#311016)}
+.booking-list{display:grid;gap:16px}
+.booking-card{background:#fffaf1;border:1px solid #dfd1c2;border-radius:14px;padding:24px 26px;position:relative;box-shadow:0 10px 24px #3b25140d}
+.booking-status{position:absolute;top:24px;right:26px;font:600 10px 'DM Mono',monospace;letter-spacing:.6px;padding:5px 10px;border-radius:999px;text-transform:uppercase}
+.booking-status-pending{background:#f6e3bd;color:#7a4a1d}
+.booking-status-accepted{background:#cdeee7;color:#136156}
+.booking-status-declined,.booking-status-cancelled{background:#f6d9d3;color:#8a2f22}
+.booking-status-completed{background:#dfe3f6;color:#33367f}
+.booking-card h2{font:600 21px 'Playfair Display',serif;margin:0 100px 16px 0;letter-spacing:-.5px;color:var(--wine,#311016)}
+.booking-meta{display:flex;flex-wrap:wrap;gap:24px;margin-bottom:14px}
+.booking-meta span{display:flex;flex-direction:column;gap:3px;font-size:12px;color:#5c4d47}
+.booking-meta b{font:500 9px 'DM Mono',monospace;letter-spacing:.6px;color:#a2554a;text-transform:uppercase}
+.booking-message{font-size:13px;line-height:1.5;color:#6b5850;background:#f3e5d3;padding:12px 14px;border-radius:10px;margin:0 0 16px}
+.booking-card footer{display:flex;gap:10px;flex-wrap:wrap}
+
+.artist-detail-backdrop{position:fixed;inset:0;z-index:55;background:#210b1294;backdrop-filter:blur(7px);display:grid;place-items:center;padding:24px}
+.artist-detail{width:min(620px,100%);max-height:min(760px,calc(100vh - 48px));overflow:auto;background:#fff8ee;border:1px solid #e5cba8;border-radius:18px;padding:32px;position:relative;box-shadow:0 28px 80px #1f0b11a6;animation:casting-modal-in .3s ease both}
+.artist-detail-close{position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:50%;background:#f2e2cd;color:#77413a;font-size:15px;line-height:1;display:grid;place-items:center}
+.stage-avatar--lg{width:66px;height:66px;font-size:21px;flex:none}
+.artist-detail header{display:flex;gap:18px;align-items:center;margin-bottom:20px}
+.artist-detail header h2{font:600 26px 'Playfair Display',serif;margin:0 0 4px;color:#35121c}
+.artist-detail header p{margin:0;font-size:12px;color:#7c665d}
+.collab-badge{display:inline-block;margin-top:6px;font:600 9px 'DM Mono',monospace;letter-spacing:.5px;text-transform:uppercase;background:#e7f3df;color:#3f6b2c;padding:4px 9px;border-radius:999px}
+.collab-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#5f9c46;margin-left:7px;vertical-align:middle}
+.artist-detail-stats{display:flex;gap:28px;padding:16px 0;border-top:1px solid #ead9c7;border-bottom:1px solid #ead9c7;margin-bottom:18px}
+.artist-detail-stats b{font-size:17px;color:#35121c;display:flex;flex-direction:column;gap:2px}
+.artist-detail-stats small{font-size:10px;color:#8a746a;font-weight:400}
+.artist-detail-bio{font-size:13px;line-height:1.6;color:#5c4d47;margin:0 0 20px}
+.artist-detail-portfolio h3{font:600 12px 'DM Mono',monospace;letter-spacing:.6px;color:#a2554a;text-transform:uppercase;margin:0 0 12px}
+.artist-detail-portfolio ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:10px}
+.artist-detail-portfolio li{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid #ead9c7;font-size:12px;color:#5c4d47}
+.artist-detail-portfolio li b{display:block;font-family:'Playfair Display',serif;font-size:14px;color:#35121c;margin-bottom:2px}
+.artist-detail-portfolio li span{display:block;font-size:11px;color:#8a746a}
+.portfolio-thumb{width:44px;height:44px;flex:none;border-radius:8px;overflow:hidden;background:#efe2cf}
+.portfolio-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.artist-detail footer{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Portfolio: media kept visually separate from the copy block below it,
+   supports multiple photos per item, and every field but the title is
+   optional since not every artist arrives with formal production credits. */
+.portfolio-section .panel-heading{align-items:flex-start}
+.portfolio-subhead{display:block;margin-top:8px;font-size:12px;line-height:1.6;color:#8a746a;max-width:480px}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.portfolio-card{position:relative;display:flex;flex-direction:column;height:auto;padding:0;background:#fffaf1;border:1px solid #dfd1c2;border-radius:14px;overflow:hidden;box-shadow:0 10px 24px #3b25140d}
+.portfolio-card:after{content:none}
+.portfolio-media{position:relative;background:#e7d8c4;flex:none}
+.portfolio-media-main{aspect-ratio:4/3;overflow:hidden;background:#e7d8c4}
+.portfolio-media-main img,.portfolio-media-main video{width:100%;height:100%;object-fit:cover;display:block}
+.portfolio-media-empty{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#a3907f;background:repeating-linear-gradient(135deg,#efe2cf,#efe2cf 10px,#e7d8c1 10px,#e7d8c1 20px)}
+.portfolio-media-empty span{font-size:11px}
+.portfolio-media-thumbs{display:flex;gap:6px;padding:8px;background:#fffaf1;overflow-x:auto}
+.portfolio-media-thumbs button{width:38px;height:38px;flex:none;border-radius:6px;overflow:hidden;border:2px solid transparent;padding:0;background:#e7d8c4;cursor:pointer}
+.portfolio-media-thumbs button.active{border-color:#a2554a}
+.portfolio-media-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb-video{display:grid;place-items:center;width:100%;height:100%;color:#7a4a1d;font-size:12px;background:#e7d8c4}
+.portfolio-copy{position:static;margin:0;padding:16px 44px 18px 18px;flex:1;display:flex;flex-direction:column;gap:5px}
+.portfolio-copy>span{position:static;font:500 9px 'DM Mono',monospace;letter-spacing:.6px;text-transform:uppercase;color:#a2554a}
+.portfolio-copy h3{position:static;font:600 19px 'Playfair Display',serif;margin:0;color:#35121c;letter-spacing:-.3px}
+.portfolio-copy p{position:static;font-size:12px;line-height:1.6;color:#6b5850;margin:0}
+.portfolio-edit,.portfolio-remove{position:absolute;z-index:3;top:10px;width:27px;height:27px;border-radius:50%;background:#260f16c9;color:#fff8e8;cursor:pointer}
+.portfolio-remove{right:10px;font-size:16px;line-height:16px}
+.portfolio-edit{right:44px;border:1px solid #fff8e89c;font:500 9px 'DM Mono',monospace;padding:0;width:auto;padding:5px 9px;border-radius:999px}
+
+.portfolio-media-manager span{display:block;font:500 11px 'DM Mono',monospace;color:#5e332e;margin-bottom:10px}
+.portfolio-media-manager span em{font-style:normal;font-weight:400;color:#9a8478;font-family:'DM Sans',sans-serif;font-size:11px;margin-left:4px}
+.media-manager-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.media-manager-item{position:relative;width:62px;height:62px;border-radius:8px;overflow:hidden;background:#e7d8c4}
+.media-manager-item img{width:100%;height:100%;object-fit:cover;display:block}
+.media-manager-item button{position:absolute;top:2px;right:2px;width:18px;height:18px;line-height:16px;border-radius:50%;background:#210d15cc;color:#fff8e8;font-size:11px;padding:0}
+.media-upload-button{display:inline-flex;align-items:center;justify-content:center;border:1px solid #d7a85e;background:#fff8ec;color:#71312e;border-radius:999px;padding:9px 14px;cursor:pointer;font:600 11px 'DM Mono',monospace}
+.media-upload-button:hover{background:#f3e0bb}
+.media-upload-button input{display:none}
+.video-link-row{display:flex;gap:8px}
+.video-link-row input{flex:1;border:1px solid #dfcdb8;border-radius:8px;background:#fffdf8;padding:11px;font:13px 'DM Sans',sans-serif;color:#32111a}
+.video-link-row button{border:1px solid #d7a85e;background:#fff8ec;color:#71312e;border-radius:8px;padding:0 14px;font:600 11px 'DM Mono',monospace;cursor:pointer}
+@media(max-width:850px){.portfolio-grid{grid-template-columns:1fr}}
+
+/* Global search: a real live search box in the topbar covering people,
+   organizations, casting calls, and posts — not just casting calls. */
+.global-search{position:relative;width:min(435px,50vw)}
+.global-search .workspace-search{width:100%}
+.global-search .workspace-search input{border:0;outline:0;background:transparent;font:13px 'DM Sans',sans-serif;color:inherit;width:100%}
+.global-search .workspace-search input::placeholder{color:#9d897d}
+.global-search-panel{position:absolute;top:calc(100% + 10px);left:0;width:min(460px,90vw);max-height:70vh;overflow:auto;background:#fffaf1;border:1px solid #dfd1c2;border-radius:14px;box-shadow:0 20px 45px #3b25142e;z-index:30;padding:8px}
+.global-search-status{padding:14px 12px;font-size:12px;color:#8a746a;margin:0}
+.global-search-group{padding:6px 4px}
+.global-search-group+.global-search-group{border-top:1px solid #ead9c7;margin-top:4px}
+.global-search-group>p{font:600 9px 'DM Mono',monospace;letter-spacing:1px;color:#a2554a;margin:4px 8px 6px;text-transform:uppercase}
+.global-search-group button{width:100%;display:flex;align-items:center;gap:10px;padding:8px;border-radius:9px;background:transparent;text-align:left}
+.global-search-group button:hover{background:#f3e5d3}
+.global-search-group button b{display:block;font-size:12px;color:#35121c;font-weight:600}
+.global-search-group button small{display:block;font-size:10px;color:#8a746a;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.global-search-mark{width:30px;height:30px;flex:none;border-radius:50%;background:#f2e0c1;color:#843b31;display:grid;place-items:center;font:600 10px 'DM Mono',monospace}
+.kind-toggle{display:flex;gap:6px;flex:none}
+.kind-toggle button{padding:9px 14px;border-radius:999px;border:1px solid #dfd1c2;background:#fffaf1;color:#7c655c;font-size:11px;font-weight:600;white-space:nowrap}
+.kind-toggle button.active{background:var(--wine,#311016);color:#fff7ec;border-color:var(--wine,#311016)}
+@media(max-width:850px){.global-search{width:62vw}.global-search-panel{width:88vw;left:-30px}.kind-toggle{order:3;flex-basis:100%}}
+
+.link-reset{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-align:left}
+.link-reset:hover{text-decoration:underline}
+.filter-chip{border:1px solid #dfd1c2;background:#fffaf1;border-radius:999px;padding:9px 14px;font-size:11px;font-weight:600;color:#7c655c;white-space:nowrap;flex:none}
+.filter-chip.active{background:#e7f3df;border-color:#a8cf94;color:#3f6b2c}
+
+.auth-demo{margin-top:26px;padding-top:22px;border-top:1px solid #ecdcc9}
+.auth-demo>p{font:500 10px 'DM Mono',monospace;letter-spacing:1.3px;color:#a24a3d;margin:0 0 12px}
+.auth-demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.auth-demo-grid button{text-align:left;padding:11px 13px;border-radius:10px;border:1px solid #e3d4c4;background:#fffaf0;color:#4d2724;transition:.2s}
+.auth-demo-grid button:hover{border-color:#be674f;background:#f8e9d7}
+.auth-demo-grid b{display:block;font-size:12px}
+.auth-demo-grid span{display:block;font-size:10px;color:#8b7970;margin-top:2px}
+.auth-demo>small{display:block;margin-top:11px;font-size:10px;color:#93807a;line-height:1.5}
+
+@media(max-width:850px){
+  .streak-bar{padding:18px 20px;gap:16px}
+  .streak-prompt{border-left:0;padding-left:0;width:100%;order:3}
+  .booking-card{padding:20px}
+  .booking-card h2{margin-right:0;margin-top:22px}
+  .booking-status{top:20px;right:20px}
+  .artist-detail{padding:24px}
+  .auth-demo-grid{grid-template-columns:1fr}
+}

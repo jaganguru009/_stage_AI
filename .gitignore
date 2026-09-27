@@ -4,3 +4,8 @@ build/
 .npm-cache/
 .vercel/
 *.local
+.env
+.env.*
+!.env.example
+coverage/
+.stage-data/

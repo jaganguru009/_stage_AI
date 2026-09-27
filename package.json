@@ -5,17 +5,29 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "server": "node --env-file-if-exists=.env server/index.js",
+    "server:dev": "node --env-file-if-exists=.env --watch server/index.js",
+    "local": "npm run build && node server/local.js",
+    "local": "npm run build && node server/local.js",
+    "db:migrate": "node --env-file-if-exists=.env server/migrate.js",
+    "test:api": "node --test server/test/*.test.js"
   },
   "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.16.3",
+    "zod": "^4.1.0",
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "^7.18.2",
     "react-scripts": "5.0.1"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.3.14",
     "gh-pages": "^6.3.0"
   },
+  "proxy": "http://127.0.0.1:4000",
+  "engines": { "node": ">=22.0.0" },
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"],
     "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]

@@ -1,0 +1,40 @@
+.stage-error { padding: 14px 18px; border: 1px solid #ba5953; background: #fff1ee; color: #7e2525; border-radius: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.stage-error button { margin-left: 16px; text-decoration: underline; background: none; border: 0; cursor: pointer; }
+.stage-empty { padding: 22px; color: #776761; line-height: 1.7; }
+.stage-loading { max-width: 680px; margin: 15vh auto; padding: 24px; font-size: 18px; }
+.stage-hint { color: #776761; font-size: 13px; line-height: 1.6; }
+.workspace-feedback { padding: 0 30px; }
+.workspace-feedback:has(.stage-error), .workspace-feedback:has([role="status"]) { padding-top: 18px; }
+.workspace-feedback [role="status"] { display: block; margin-top: 8px; font-size: 13px; }
+.sidebar-bottom button { background: none; border: 0; text-align: left; cursor: pointer; font: inherit; color: inherit; padding: 0; }
+.stage-profile-form { padding: 28px; margin: 24px 0; border: 1px solid #e7dbd2; background: #fffaf4; border-radius: 18px; }
+.stage-profile-form input, .stage-profile-form textarea, .live-applicant select { border: 1px solid #d8c8bf; border-radius: 8px; padding: 12px; font: inherit; width: 100%; background: #fffdf9; }
+.stage-profile-form textarea { min-height: 120px; }
+.casting-description, .post-text, .thread-body p { white-space: pre-wrap; overflow-wrap: anywhere; }
+.thread-body p small { display: block; opacity: .65; font-size: 10px; margin-top: 7px; }
+.live-applicant { gap: 15px; flex-wrap: wrap; }
+.talent-pipeline article.live-applicant { grid-template-columns: minmax(190px, 1.3fr) 1fr 150px 80px; }
+.live-applicant select { font-size: 14px; padding: 10px 8px; }
+.live-applicant > div { flex: 1; min-width: 170px; }
+.live-applicant select { width: auto; }
+.live-applicant details { font-size: 13px; margin-top: 8px; }
+.live-applicant details p { line-height: 1.6; }
+.applicant-identity { display: flex; align-items: center; gap: 11px; min-width: 0; cursor: pointer; }
+.applicant-identity > div { min-width: 0; }
+.applicant-identity h3, .applicant-identity p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.applicant-identity:hover h3 { text-decoration: underline; color: #9d4135; }
+.applicant-portfolio-note { min-width: 0; }
+@media(max-width: 720px) { .talent-pipeline article.live-applicant { grid-template-columns: minmax(140px, 1fr) 1fr 120px 70px; } .live-applicant select { font-size: 12px; padding: 10px 6px; } }
+.post-author-link { display: flex; align-items: center; gap: 10px; min-width: 0; cursor: pointer; }
+.post-author-link:hover h3 { text-decoration: underline; color: #9d4135; }
+.comment-author-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; cursor: pointer; vertical-align: middle; }
+.comment-author-link:hover { text-decoration: underline; color: #9d4135; }
+.thread-recipient-link { display: flex; align-items: center; gap: 10px; min-width: 0; cursor: pointer; }
+.thread-recipient-link:hover h3 { text-decoration: underline; color: #9d4135; }
+.notification-list article.is-read { opacity: .55; }
+.notification-list article.is-read .notice-icon { background: #f1ece4; color: #a3907f; }
+.published-calls > .casting-grid { display: grid; }
+.stage-button:disabled, button:disabled { cursor: not-allowed; opacity: .6; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.production-form, .casting-modal, .community-form { max-height: 90vh; overflow-y: auto; }
+@media(max-width: 720px) { .workspace-feedback { padding-left: 16px; padding-right: 16px; } .stage-profile-form { padding: 18px; } .live-applicant select { max-width: 150px; } }

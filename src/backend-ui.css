@@ -14,6 +14,10 @@
 .thread-body p small { display: block; opacity: .65; font-size: 10px; margin-top: 7px; }
 .live-applicant { gap: 15px; flex-wrap: wrap; }
 .talent-pipeline article.live-applicant { grid-template-columns: minmax(190px, 1.3fr) 1fr 150px 80px; }
+/* Higher specificity than ".live-applicant > div { flex: 1; min-width: 170px }"
+   below (meant for the portfolio-note column) so it doesn't also stretch this
+   button stack to 170px and blow out the 80px actions column. */
+.live-applicant > .applicant-actions { display: flex; flex-direction: column; gap: 6px; flex: none; min-width: 0; width: 100%; }
 .live-applicant select { font-size: 14px; padding: 10px 8px; }
 .live-applicant > div { flex: 1; min-width: 170px; }
 .live-applicant select { width: auto; }

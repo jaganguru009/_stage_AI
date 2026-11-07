@@ -37,3 +37,10 @@
 @keyframes stage-image-breathe{from{transform:scale(1)}to{transform:scale(1.065)}}@keyframes stage-copy-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@keyframes stage-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@keyframes stamp-turn{to{transform:rotate(372deg)}}
 @media(max-width:850px){.workspace{grid-template-columns:68px minmax(0,1fr)}.workspace-sidebar{width:auto}.workspace-main{width:auto;margin-left:0}.workspace-topbar{padding:0 18px}.rehearsal-hero{height:360px;margin-bottom:35px}.rehearsal-hero:after{background:linear-gradient(0deg,#210e13dc 0%,#210e1344 100%)}.rehearsal-hero-copy{width:100%;padding:155px 25px 20px}.rehearsal-hero-copy h1{font-size:39px}.rehearsal-hero-copy span{font-size:12px}.rehearsal-stamp{right:16px;top:15px;width:65px;height:65px}.workspace-search{width:min(64vw,390px)!important}.workspace-search kbd{display:none}}
 .org-grid-link{display:contents}
+.rating-badge{display:inline-flex;align-items:center;gap:4px;font:600 12px 'DM Mono',monospace;color:#9d4135;background:#f3e5cd;border-radius:999px;padding:5px 10px;margin:8px 8px 8px 0}
+.rating-badge small{font-weight:500;color:#a98a6f}
+.rating-badge-empty{background:transparent;color:#a7978c;padding:5px 0;font:500 11px 'DM Mono',monospace;display:inline-block;margin:8px 10px 8px 0}
+.completion-badge{display:inline-block;margin:8px 8px 8px 0;font:600 10px 'DM Mono',monospace;color:#0f766e;background:#dce9dc;border-radius:999px;padding:5px 10px}
+.review-done-note{font-size:11px;color:#8992a0;align-self:center}
+.booking-card footer{flex-wrap:wrap;row-gap:10px}
+.profile-metrics b{white-space:nowrap}

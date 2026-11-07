@@ -13,7 +13,13 @@
 .casting-description, .post-text, .thread-body p { white-space: pre-wrap; overflow-wrap: anywhere; }
 .thread-body p small { display: block; opacity: .65; font-size: 10px; margin-top: 7px; }
 .live-applicant { gap: 15px; flex-wrap: wrap; }
-.talent-pipeline article.live-applicant { grid-template-columns: minmax(190px, 1.3fr) 1fr 150px 80px; }
+.talent-pipeline article.live-applicant { grid-template-columns: 28px minmax(190px, 1.3fr) 1fr 150px 80px; }
+.applicant-select { display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.applicant-select input { width: 16px; height: 16px; margin: 0; cursor: pointer; }
+.live-applicant.is-selected { background: #fdf1e4; border-radius: 10px; }
+.bulk-actions-bar { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 12px 16px; margin-bottom: 10px; background: #f3e5cd; border: 1px solid #e0c9a6; border-radius: 10px; }
+.bulk-actions-bar label { display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 600; color: #6b302a; }
+.bulk-actions-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
 /* Higher specificity than ".live-applicant > div { flex: 1; min-width: 170px }"
    below (meant for the portfolio-note column) so it doesn't also stretch this
    button stack to 170px and blow out the 80px actions column. */
@@ -28,7 +34,7 @@
 .applicant-identity h3, .applicant-identity p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .applicant-identity:hover h3 { text-decoration: underline; color: #9d4135; }
 .applicant-portfolio-note { min-width: 0; }
-@media(max-width: 720px) { .talent-pipeline article.live-applicant { grid-template-columns: minmax(140px, 1fr) 1fr 120px 70px; } .live-applicant select { font-size: 12px; padding: 10px 6px; } }
+@media(max-width: 720px) { .talent-pipeline article.live-applicant { grid-template-columns: 24px minmax(140px, 1fr) 1fr 120px 70px; } .live-applicant select { font-size: 12px; padding: 10px 6px; } .bulk-actions-bar { flex-direction: column; align-items: flex-start; } }
 .post-author-link { display: flex; align-items: center; gap: 10px; min-width: 0; cursor: pointer; }
 .post-author-link:hover h3 { text-decoration: underline; color: #9d4135; }
 .comment-author-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; cursor: pointer; vertical-align: middle; }
